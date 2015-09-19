@@ -9,39 +9,28 @@ angular.module('electronic-medical-record-api')
     /**
      * Get the patient list
      */
-    query: function(query) {
+    patients: function(query) {
       return Api.get('/patients', null, query);
     },
     
     /**
      * Creates a new patient
      */
-    post: function(entity) {
+    newPatient: function(entity) {
       return Api.post('/patients', entity);
-    },
-    
-    
-    lol: {
-      
-      /**
-       * Get data about the patient
-       */
-      query: function(query) {
-        return Api.get('/patients/lol', null, query);
-      }
     },
     
     /**
      * Get data about the patient
      */
-    get: function(id) {
+    getPatient: function(id) {
       return Api.get('/patients', id);
     },
     
     /**
      * Updates the data about the patient
      */
-    put: function(entity) {
+    updatePatient: function(entity) {
       return Api.put('/patients', entity.id, entity);
     }
   };

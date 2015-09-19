@@ -6,7 +6,7 @@
       "Patients"
     ],
     "allInOneFile": false,
-    "destination": "../scripts/api",
+    "destination": "../js/api",
     "force": true,
     "mediaTypeExtension": ".json"
   }
