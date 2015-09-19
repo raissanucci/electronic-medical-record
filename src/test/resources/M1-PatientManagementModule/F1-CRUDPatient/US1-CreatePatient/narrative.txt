@@ -1,4 +1,0 @@
-Narrative:
-In order to provide service to a patient
-As a receptionist
-I want to be able to insert a new patient 
