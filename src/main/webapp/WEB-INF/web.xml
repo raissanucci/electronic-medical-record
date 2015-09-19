@@ -5,12 +5,16 @@
 <web-app>
     <display-name>Electronic Medical Record</display-name>
     <servlet>
-        <servlet-name>helloworld</servlet-name>
-        <servlet-class>br.unicamp.mc437.grupo3.electronicmedicalrecord.servlet.HelloWorldServlet</servlet-class>
+        <servlet-name>jersey-servlet-container</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>br.unicamp.mc437.grupo3.electronicmedicalrecord.application.DefaultApplication</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>helloworld</servlet-name>
-        <url-pattern>/hello</url-pattern>
+        <servlet-name>jersey-servlet-container</servlet-name>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
 </web-app>
