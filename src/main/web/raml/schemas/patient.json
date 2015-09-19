@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "properties": {
+    "name": {"type": "string"},
+    "rg": {"type": "string"},
+    "cpf": {"type": "date"}
+  },
+  "required": ["name"],
+  "type": "object"
+}

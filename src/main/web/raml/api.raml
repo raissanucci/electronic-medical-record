@@ -1,0 +1,49 @@
+#%RAML 0.8
+
+title: Electronic Medical Record API
+baseUri: http://example.api.com/{version}
+version: v1
+schemas:
+  - Patient: !include schemas/patient.json
+traits:
+  - paged:
+      queryParameters:
+        pages:
+          description: The number of pages to return
+          type: number
+/patients:
+    is: [ paged ]
+    get:
+        displayName: Patients
+        description: Get the patient list
+        queryParameters:
+            name:
+                description: filter the patients by name
+                type: string
+            rg:
+                description: filter the patients by rg
+                type: string
+            cpf:
+                description: filter the patients by cpf
+                type: string
+    post:
+        displayName: NewPatient
+        description: Creates a new patient
+        body:
+            application/json:
+                schema: Patient
+    /{id}:
+        get:
+            displayName: GetPatient
+            description: Get data about the patient
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: Patient
+        put:
+            displayName: UpdatePatient
+            description: Updates the data about the patient
+            body:
+                application/json:
+                    schema: Patient

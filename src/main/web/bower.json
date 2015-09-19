@@ -1,0 +1,30 @@
+{
+  "name": "electronic-medical-record",
+  "version": "0.0.0",
+  "homepage": "https://github.com/fellipecaetano/electronic-medical-record",
+  "authors": [
+    "André Terron <andrev.terron@gmail.com>"
+  ],
+  "description": "A prototype of a standardised digital electronic medical record, developed as an academic project for the discipline of \"Project in Information Systems\" (code MC437) at Universidade Estadual de Campinas (UNICAMP) during the 2nd semester of 2015.",
+  "main": "index.html",
+  "keywords": [
+    "unicamp",
+    "mc437",
+    "electronic",
+    "medical",
+    "record"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.6",
+    "bootstrap": "~3.3.5",
+    "jquery": "jQuery#~2.1.4"
+  }
+}

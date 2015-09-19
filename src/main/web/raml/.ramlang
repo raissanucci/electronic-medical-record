@@ -1,0 +1,13 @@
+{
+  "generator-ramlang": {
+    "apiModuleName": "electronic-medical-record",
+    "ramlPath": "api.raml",
+    "selectedResources": [
+      "Patients"
+    ],
+    "allInOneFile": false,
+    "destination": "../scripts/api",
+    "force": true,
+    "mediaTypeExtension": ".json"
+  }
+}
