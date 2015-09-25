@@ -22,5 +22,3 @@ Scenario:  Finishing signing up the patient
 Given the receptionist Laura wants to finish signing up the patient and all fields are validated
 When the receptionist Laura selects the finish option
 Then the system creates the patient in the database and shows a success message
-
-
