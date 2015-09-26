@@ -1,7 +1,12 @@
 Narrative:
 In order to provide service to a patient
 As a receptionist
-I want to be able to insert a new patient 
+I want to be able to insert a new patient
+
+Lifecycle:
+After:
+Outcome: SUCCESS
+Given the "Create_Patient" event is inserted on the audit trail
 
 Scenario:  Filling up the patient sign-up page
 Given the receptionist Laura is on sign-up patient page
@@ -15,12 +20,27 @@ Examples:
 |1234567657|cpf|
 |872648769|rg|
 |Avenida das Flores|endereco|
-|MedSul|planodesaude|
-!-- Put all information provided by Laura to the system in the When
 
-Scenario:  Finishing signing up the patient
-Given the receptionist Laura wants to finish signing up the patient and all fields are validated
+Scenario:  Finishing signing up a patient that doesn't exist
+Given the receptionist Laura wants to finish signing up the patient 
+And the patient is not yet registered
+And all fields are validated
 When the receptionist Laura selects the finish option
 Then the system creates the patient in the database and shows a success message
 
+Scenario: Finishing signing up a patient that does exist
+Given the receptionist Laura wants to insert someone
+And the patient is already registered
+When the receptionist Laura selects the finish option
+Then the system shows a message informing that the patient already exists and gives the option to create the register or not
 
+Scenario: Choosing to create patient that already exists
+Given the receptionist Laura wants to create a patient that already exists in the system
+And the warning message has been shown
+When the receptionist Laura selects the  create option
+Then the system creates a new patient in the database and shows a success messageq
+
+Scenario: Inserting patient health insurance
+Given the receptionist Laura is on create patient page
+When the receptionist Laura select insert health insurance and select a health insurance
+Then the system insert the health insurance into the patient demographic record
