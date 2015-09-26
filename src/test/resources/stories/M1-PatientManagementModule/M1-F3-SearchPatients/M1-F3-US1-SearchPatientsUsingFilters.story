@@ -24,7 +24,7 @@ When he searches by <field> using the value <value>
 Then the system shows a list of users that match the search query
 
 Examples:
-|value|field|
+|field|value|
 
 Scenario: Advanced successful search done by a doctor
 Given that the doctor Miguel wants to do an advanced search query
@@ -43,7 +43,7 @@ When he searches by <field> using the value <value>
 Then he sees a message "nenhum resultado encontrado"
 
 Examples:
-|value|field|
+|field|value|
 
 Scenario: Doctor start an appointment after a successful search
 Given that the doctor Miguel searched for a patient Jonas
