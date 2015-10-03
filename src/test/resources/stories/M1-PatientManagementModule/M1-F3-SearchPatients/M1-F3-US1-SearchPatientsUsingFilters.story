@@ -11,25 +11,29 @@ Given the "Search_Patient" event is inserted on the audit trail
 Scenario: Simple search done by the receptionist
 Given that the receptionist Laura searches for a patient
 And the patient is registered
-When she searches for by <field> using the value <value>
-Then the system shows a list of users that match the search query
+When the receptionist searches for by <field> using the value <value>
+Then the system shows a list of users that match the search query on <field> by <value>
 
 Examples:
 |field|value|
+|name|Lucas|
+|code|9821|
 
 Scenario: Simple successful search done by a doctor
 Given that the doctor Miguel searches for a patient
 And the patient is registered
-When he searches by <field> using the value <value>
+When the doctor searches by <field> using the value <value>
 Then the system shows a list of users that match the search query
 
 Examples:
 |field|value|
+|name|Felipe|
+|Code|1234|
 
 Scenario: Advanced successful search done by a doctor
 Given that the doctor Miguel wants to do an advanced search query
 And there are patients that match the query
-When he searches by the query <query>
+When the doctor searches by the query <query>
 Then the system shows a list of users that match the search query
 
 Examples:
