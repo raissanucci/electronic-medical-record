@@ -6,7 +6,7 @@ I want to be able to insert a new patient
 Lifecycle:
 After:
 Outcome: SUCCESS
-Given the "Create_Patient" event is inserted on the audit trail
+Given the Create_Patient event is inserted on the audit trail
 
 Scenario:  Filling up the patient sign-up page
 Given the receptionist Laura is on sign-up patient page
