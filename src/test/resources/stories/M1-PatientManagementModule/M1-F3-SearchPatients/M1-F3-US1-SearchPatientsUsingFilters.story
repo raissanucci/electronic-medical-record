@@ -22,16 +22,18 @@ Examples:
 Scenario: Simple successful search done by a doctor
 Given that the doctor Miguel searches for a patient
 And the patient is registered
-When he searches by <field> using the value <value>
+When the doctor searches by <field> using the value <value>
 Then the system shows a list of users that match the search query
 
 Examples:
 |field|value|
+|name|Felipe|
+|Code|1234|
 
 Scenario: Advanced successful search done by a doctor
 Given that the doctor Miguel wants to do an advanced search query
 And there are patients that match the query
-When he searches by the query <query>
+When the doctor searches by the query <query>
 Then the system shows a list of users that match the search query
 
 Examples:
