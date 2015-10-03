@@ -1,0 +1,56 @@
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Pacientes Cadastrados</h3>
+                  <div class="box-tools">
+                    <div class="input-group" style="width: 250px;">
+                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Buscar paciente">
+                      <div class="input-group-btn">
+                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tr>
+                      <th>CNS</th>
+                      <th>Nome</th>
+                      <th>Idade</th>
+                      <th>Última Consulta</th>
+                      <th>Status</th>
+                    </tr>
+                    <tr>
+                      <td>700902944489190</td>
+                      <td>Michel Francisco Nagme Rachid Costa</td>
+                      <td>26</td>
+                      <td>02/10/2015</td>
+                      <td><span class="label label-success">Consulta Marcada</span></td>
+                    </tr>
+                    <tr>
+                      <td>156616491651891</td>
+                      <td>Alexander Pierce</td>
+                      <td>51</td>
+                      <td>25/09/2015</td>
+                      <td><span class="label label-warning">Precisa Marcar</span></td>
+                    </tr>
+                    <tr>
+                      <td>916981561813154</td>
+                      <td>Bob Doe</td>
+                      <td>32</td>
+                      <td>16/09/2015</td>
+                      <td><span class="label label-primary">Consulta Recente</span></td>
+                    </tr>
+                    <tr>
+                      <td>315918165198464</td>
+                      <td>Mike Doe</td>
+                      <td>47</td>
+                      <td>23/06/2015</td>
+                      <td><span class="label label-danger">Inativo</span></td>
+                    </tr>
+                  </table>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div>
+          </div>
