@@ -1,5 +1,115 @@
-<div id="patient-details">
-    <form>
-        <input name="name" type="text" />
-    </form>
-</div>
+<!-- Content Header (Page header) -->
+<section class="content-header" name="patient-details">
+  <h1>
+    Cadastrar Paciente
+    <small>Formulário de cadastro de paciente</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Página inicial</a></li>
+    <li><a href="#">Cadastrar Paciente</a></li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+  <!-- form start -->
+        <form role="form">
+          <div class="box-body">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" class="form-control" name="name" ng-model="patient.name" placeholder="Digite nome completo">
+            </div>
+            <div class="form-group">
+              <label for="socialName">Nome Social</label>
+              <input type="text" class="form-control" name="socialName" ng-model="patient.socialName" placeholder="Digite o nome social">
+            </div>
+            <div class="form-group">
+              <label for="mothersName">Nome da Mãe</label>
+              <input type="text" class="form-control" name="mothersName" ng-model="patient.mothersName" placeholder="Digite o nome completo da mãe">
+            </div>
+            <div class="form-group">
+              <label for="fathersName">Nome do Pai</label>
+              <input type="text" class="form-control" name="fathersName" ng-model="patient.fathersName" placeholder="Digite o nome completo do pai">
+            </div>
+            <div class="form-group">
+              <label for="gender">Gênero</label>
+              <input type="text" class="form-control" name="gender" ng-model="patient.gender" placeholder="Digite o gênero">
+            </div>
+            <div class="form-group">
+              <label for="color">Cor</label>
+              <input type="text" class="form-control" name="color" ng-model="patient.color" placeholder="Digite a cor">
+            </div>
+            <div class="form-group">
+              <label for="birthdate">Data de nascimento</label>
+              <input type="text" class="form-control" name="birthdate" ng-model="patient.birthdate" placeholder="Digite a data de nascimento no formato dd/mm/aaaa">
+            </div>
+            <div class="form-group">
+              <label for="bloodtype">Tipo Sanguíneo</label>
+              <input type="text" class="form-control" name="bloodtype" ng-model="patient.bloodtype" placeholder="Digite o tipo sanguíneo">
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="text" class="form-control" name="email" ng-model="patient.email" placeholder="Digite o e-mail">
+            </div>
+            <div class="form-group">
+              <label for="cpf">CPF</label>
+              <input type="text" class="form-control" name="cpf" ng-model="patient.cpf" placeholder="Digite somente os números do CPF">
+            </div>
+            <div class="form-group">
+              <label for="rg">RG</label>
+              <input type="text" class="form-control" name="rg" ng-model="patient.rg" placeholder="Digite o RG">
+            </div>
+            <div class="form-group">
+              <label for="orgEmissor">Órgão Emissor</label>
+              <input type="text" class="form-control" name="orgEmissor" ng-model="patient.orgEmissor" placeholder="Digite o órgão emissor">
+            </div>
+            <div class="form-group">
+              <label for="orgEmissorUF">UF do Órgão Emissor</label>
+              <input type="text" class="form-control" name="orgEmissorUF" ng-model="patient.orgEmissorUF" placeholder="Digite a sigla da UF emissora">
+            </div>
+            <div class="form-group">
+              <label for="ddd">DDD</label>
+              <input type="text" class="form-control" name="ddd" ng-model="patient.ddd" placeholder="Digite os dois dígitos do DDD">
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefone</label>
+              <input type="text" class="form-control" name="phone" ng-model="patient.phone" placeholder="Digite somente os números do telefone">
+            </div>
+            <div class="form-group">
+              <label for="zip">CEP</label>
+              <input type="text" class="form-control" name="zip" ng-model="patient.zip" placeholder="Digite somente os números do CEP">
+            </div>
+            <div class="form-group">
+              <label for="address">Endereço</label>
+              <input type="text" class="form-control" name="address" ng-model="patient.address" placeholder="Digite o endereço, sem número">
+            </div>
+            <div class="form-group">
+              <label for="addressNumber">Número</label>
+              <input type="text" class="form-control" name="addressNumber" ng-model="patient.addressNumber" placeholder="Digite o número do endereço">
+            </div>
+            <div class="form-group">
+              <label for="addressComplement">Complemento</label>
+              <input type="text" class="form-control" name="addressComplement" ng-model="patient.addressComplement" placeholder="Digite o complemento">
+            </div>
+            <div class="form-group">
+              <label for="addressCityArea">Bairro</label>
+              <input type="text" class="form-control" name="addressCityArea" ng-model="patient.addressCityArea" placeholder="Digite o bairro">
+            </div>
+            <div class="form-group">
+              <label for="addressCity">Cidade</label>
+              <input type="text" class="form-control" name="addressCity" ng-model="patient.addressCity" placeholder="Digite a cidade">
+            </div>
+            <div class="form-group">
+              <label for="addressUF">Estado</label>
+              <input type="text" class="form-control" name="addressUF" ng-model="patient.addressUF" placeholder="Digite a sigla do estado">
+            </div>
+            <div class="form-group">
+              <label for="addressCountry">País</label>
+              <input type="text" class="form-control" name="addressCountry" ng-model="patient.addressCountry" placeholder="Digite o país">
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar Paciente</button>
+          </div>
+        </form>
+
+</section><!-- /.content -->

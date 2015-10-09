@@ -1,10 +1,30 @@
 {
-  "$schema": "http://json-schema.org/draft-03/schema",
-  "properties": {
-    "name": {"type": "string"},
-    "rg": {"type": "string"},
-    "cpf": {"type": "date"}
-  },
-  "required": ["name"],
-  "type": "object"
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "properties": {
+        "name": {"type": "string"},
+        "socialName": {"type": "string"},
+        "mothersName": {"type": "string"},
+        "fathersName": {"type": "string"},
+        "gender": {"type": "string"},
+        "color": {"type": "string"},
+        "birthdate": {"type": "string"},
+        "bloodtype": {"type": "string"},
+        "email": {"type": "string"},
+        "cpf": {"type": "string"},
+        "rg": {"type": "string"},
+        "orgEmissor": {"type": "string"},
+        "orgEmissorUF": {"type": "string"},
+        "ddd": {"type": "string"},
+        "phone": {"type": "string"},
+        "zip": {"type": "string"},
+        "address": {"type": "string"},
+        "addressNumber": {"type": "string"},
+        "addressComplement": {"type": "string"},
+        "addressCityArea": {"type": "string"},
+        "addressCity": {"type": "string"},
+        "addressUF": {"type": "string"},
+        "addressCountry": {"type": "string"}
+    },
+    "required": ["name"],
+    "type": "object"
 }
