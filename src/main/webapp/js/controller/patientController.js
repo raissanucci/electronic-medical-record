@@ -1,4 +1,4 @@
-ngapp.controller('patientListController', [function($scope) {
+ngapp.controller('PatientController', ['$scope', 'PatientApi', function($scope, PatientApi) {
     $scope.patient = {
         name: "",
         socialName: "",
@@ -24,4 +24,10 @@ ngapp.controller('patientListController', [function($scope) {
         addressUF: "",
         addressCountry: ""
     };
+
+    $scope.savePatient = function() {
+        console.log("SAVING PATIENT")
+        PatientApi.newPatient($scope.patient);
+    }
+
 }])

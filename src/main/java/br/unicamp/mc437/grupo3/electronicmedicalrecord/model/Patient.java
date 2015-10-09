@@ -14,10 +14,10 @@ public class Patient {
     private Integer id;
 
     @NotNull
-    private String name, cpf, rg, addressStreet, addressNumber, cep 
+    private String name, cpf, rg, addressStreet, addressNumber, cep; 
 
     private String socialName, mothersName, fathersName, email,
-                   addressComplement, addressCityArea, addressCity, 
+                   addressComplement, addressCityArea, addressCity,
                    addressCountry, ddd, phoneNumber, birthDate;
 
     public Patient(String name) {
