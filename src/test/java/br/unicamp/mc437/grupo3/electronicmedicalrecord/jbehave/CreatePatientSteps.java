@@ -12,7 +12,6 @@ public class CreatePatientSteps{
 	@Given("the receptionist Laura is on sign-up patient page")
 	public void givenTheReceptionistLauraIsOnSignupPatientPage(){
 		laura.enters_page("sign_up");
-		 //TODO 
 	}
 	@Given("the receptionist Laura wants to insert someone")
 	@Pending
@@ -67,7 +66,7 @@ public class CreatePatientSteps{
 	@Then("the system validates the $field")
 	@Pending
 	public void thenTheSystemValidatesThefield(String field){
-		 //TODO 
+		
 	}
 	@Then("shows a success message")
 	@Pending
@@ -82,7 +81,7 @@ public class CreatePatientSteps{
 	@When("the receptionist Laura inserts correct $data into the $field")
 	@Pending
 	public void whenTheReceptionistLauraInsertsCorrectdataIntoThefield(String data, String field){
-		 //TODO 
+		 laura.inserir_dado(data, field);
 	}
 	@Given("the receptionist Laura wants to create a patient that already exists in the system")
 	@Pending

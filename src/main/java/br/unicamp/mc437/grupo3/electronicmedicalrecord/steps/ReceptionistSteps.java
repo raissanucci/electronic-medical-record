@@ -7,4 +7,8 @@ public class ReceptionistSteps {
 	public void enters_page (String page) {
 		createpage.open();
 	}
+	
+	public void inserir_dado (String data, String field) {
+		createpage.insert(data, field);
+	}
 }

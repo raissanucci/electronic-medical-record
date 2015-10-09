@@ -16,9 +16,13 @@ import java.util.List;
 
 import static ch.lambdaj.Lambda.convert;
 
-@DefaultUrl("http://localhost:8080/#/patients/create")
+@DefaultUrl("http://localhost:8080/electronic-medical-record-1.0.0/index.html")
 public class CreatePage extends PageObject {
 
+	public void insert (String data, String field) {
+		WebElementFacade input = find(By.name(field));
+		input.type(data);
+	}
     /*@FindBy(name="search")
     private WebElementFacade searchTerms;
 
