@@ -25,6 +25,8 @@ public class Patient {
     
     @Enumerated(EnumType.STRING)
     private State addressUF;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 
     public Patient(String name) {
         this.name = name;
@@ -179,5 +181,10 @@ public class Patient {
     
     public State getAddressUF(){
     	return this.addressUF;
+    }
+    
+    public void setGender(int n){
+    	Gender gender = Gender.findGenderByIndex(n);
+    	this.gender = gender;
     }
 }
