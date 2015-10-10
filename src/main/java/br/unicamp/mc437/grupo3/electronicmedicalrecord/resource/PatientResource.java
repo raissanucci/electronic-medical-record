@@ -117,6 +117,7 @@ public class PatientResource {
         patient.setCpf(cpf);
         patient.setRg(rg);
         patient.setIssuerOrgan(orgEmissor);
+        patient.setIssuerOrganUF(orgEmissorUF);
         patient.setDdd(ddd);
         patient.setPhoneNumber(phone);
         patient.setCep(zip);
