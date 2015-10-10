@@ -30,9 +30,9 @@ public enum Color {
         return description;
     }
 
-    public static Color findColorByIndex(int index) {
+    public static Color findColorByDescription(String description) {
         for(Color color : Color.values()) {
-            if(color.ordinal() == index) {
+            if(description.toLowerCase().equals(color.getDescription().toLowerCase())) {
                 return color;
             }
         }

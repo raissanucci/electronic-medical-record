@@ -52,9 +52,9 @@ public enum IssuerOrgan {
         return description;
     }
 
-    public static IssuerOrgan findIssuerOrganByIndex(int index) {
+    public static IssuerOrgan findIssuerOrganByDescription(String description) {
         for(IssuerOrgan issuerOrgan : IssuerOrgan.values()) {
-            if(issuerOrgan.ordinal() == index) {
+            if(issuerOrgan.description.toLowerCase().equals(description.toLowerCase())) {
                 return issuerOrgan;
             }
         }
