@@ -1,10 +1,12 @@
 package br.unicamp.mc437.grupo3.electronicmedicalrecord.jbehave;
 
-import net.thucydides.core.annotations.Steps;
-
-import org.jbehave.core.annotations.*;
+import org.jbehave.core.annotations.Given;
+import org.jbehave.core.annotations.Pending;
+import org.jbehave.core.annotations.Then;
+import org.jbehave.core.annotations.When;
 
 import br.unicamp.mc437.grupo3.electronicmedicalrecord.steps.ReceptionistSteps;
+import net.thucydides.core.annotations.Steps;
 
 public class CreatePatientSteps{
 
@@ -34,10 +36,6 @@ public class CreatePatientSteps{
 		laura.finishes_patient();
 	}
 
-	@Given("the patient is not yet registered")
-	public void givenThePatientIsNotYetRegistered(){
-	}
-
 	@Given("all fields are validated")
 	public void givenAllFieldsAreValidated(){
 		laura.sees_all_fields_as_validated();
@@ -54,12 +52,6 @@ public class CreatePatientSteps{
 		//TODO
 	}
 
-	@Then("shows a success message")
-	@Pending
-	public void thenShowsASuccessMessage(){
-		//TODO
-	}
-
 	// Scenario 3
 
 	@Given("the receptionist Laura wants to insert someone")
@@ -67,10 +59,10 @@ public class CreatePatientSteps{
 	public void givenTheReceptionistLauraWantsToInsertSomeone(){
 		//TODO
 	}
-
-	@Given("the patient is already registered")
-	public void givenThePatientIsAlreadyRegistered(){
-
+	
+	@Given("the patient is not yet registered")
+	public void givenThePatientIsNotYetRegistered(){
+		laura.checks_the_patient_is_registered();
 	}
 
 	@When("the receptionist Laura selects the  create option")
@@ -83,6 +75,11 @@ public class CreatePatientSteps{
 	@Pending
 	public void thenTheSystemShowsAMessageInformingThatThePatientAlreadyExists(){
 		//TODO
+	}
+
+	@Then("shows a success message")
+	public void thenShowsASuccessMessage(){
+		 laura.sees_success_msg();
 	}
 
 	@Then("gives the option to create the register or not")
@@ -105,14 +102,6 @@ public class CreatePatientSteps{
 		//TODO
 	}
 
-	// recepcionist chooses create option
-	@Then("the system creates the patient in the database ")
-	@Pending
-	public void thenTheSystemCreatesThePatientInTheDatabase(){
-		//TODO
-	}
-	// shows sucess message
-
 	// Scenario 5
 
 	@Given("the receptionist Laura is on create patient page")
@@ -125,6 +114,11 @@ public class CreatePatientSteps{
 	@Pending
 	public void whenTheReceptionistLauraSelectInsertHealthInsuranceAndSelectAHealthInsurance(){
 		 //TODO
+	}
+	
+	@Then("the system creates the patient in the database ")
+	public void thenTheSystemCreatesThePatientInTheDatabase(){
+		 laura.checks_database_for_insertion();
 	}
 
 

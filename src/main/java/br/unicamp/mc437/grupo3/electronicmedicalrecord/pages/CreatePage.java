@@ -16,7 +16,7 @@ import java.util.List;
 
 import static ch.lambdaj.Lambda.convert;
 
-@DefaultUrl("http://localhost:8080/electronic-medical-record-1.0.0/index.html")
+@DefaultUrl("http://localhost:8080/electronic-medical-record-1.0.0/#/patients/create")
 public class CreatePage extends PageObject {
 
 	public void insert (String data, String field) {
@@ -33,5 +33,15 @@ public class CreatePage extends PageObject {
 	public void click_signup_btn() {
 		WebElementFacade signup = find(By.name("signupbtn"));
 		signup.click();
+	}
+
+	public boolean has_success_msg() {
+		WebElementFacade msg = find(By.className("success"));
+		return msg.isCurrentlyVisible();
+	}
+
+	public boolean insert_database() {
+		//TODO: fake object
+		return false;
 	}
 }
