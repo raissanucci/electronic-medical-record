@@ -1,8 +1,6 @@
 package br.unicamp.mc437.grupo3.electronicmedicalrecord.model;
 
 
-import java.lang.reflect.Array;
-
 /**
  * Created by raissanucci on 10/9/15.
  */

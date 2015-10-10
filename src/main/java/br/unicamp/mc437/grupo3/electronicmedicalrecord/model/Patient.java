@@ -8,52 +8,52 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-import java.util.Date;
-
 @Entity
 public class Patient {
-    @Id
+    // Patient's data
+	@Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 
     @NotNull
     private String name, cpf, rg, addressStreet, addressNumber, cep; 
 
+    // Record data
     private String socialName, mothersName, fathersName, email,
                    addressComplement, addressCityArea, addressCity,
                    addressCountry, ddd, phoneNumber, birthDate;
     
+    // Fixed value fields
     @Enumerated(EnumType.STRING)
     private State addressUF;
-
-    @Enumerated(EnumType.STRING)
-    private Gender gender;
-
-    @Enumerated(EnumType.STRING)
-    private Color color;
-
     @Enumerated(EnumType.STRING)
     private BloodType bloodType;
-
+    @Enumerated(EnumType.STRING)
+    private Color color;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
     @Enumerated(EnumType.STRING)
     private IssuerOrgan issuerOrgan;
-
-    public Patient(String name) {
-        this.name = name;
-    }
+    
+    // Patient's fields creators and getters
 
     public Patient() {}
 
     public Integer getId() {
         return id;
     }
-
-    public String getName() {
-        return name;
+    
+    public Patient(String name) {
+        this.name = name;
     }
+
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getCpf() {
@@ -72,6 +72,7 @@ public class Patient {
         this.rg = rg;
     }
 
+    // Record's fields creators and getters
     public String getAddressStreet() {
         return addressStreet;
     }
@@ -184,8 +185,10 @@ public class Patient {
         this.birthDate = birthDate;
     }
     
-    public void setAddressUF(int n) {
-    	State addressUF = State.findStateByIndex(n);
+    // Enumerated fields creators and getters
+    
+    public void setAddressUF(String acronym) {
+    	State addressUF = State.findStateByAcronym(acronym);
     	this.addressUF = addressUF;
     }
     
@@ -193,32 +196,35 @@ public class Patient {
     	return this.addressUF;
     }
     
-    public void setGender(int n){
-    	Gender gender = Gender.findGenderByIndex(n);
+    public void setBloodType(String description) {
+    	BloodType bloodType = BloodType.findBloodTypeByDescription(description);
+    	this.bloodType = bloodType;
+    }
+    
+    public BloodType getBloodType() {
+    	return this.bloodType;
+    }
+    
+    public void setColor(String description) {
+    	Color color = Color.findColorByDescription(description);
+    	this.color = color;
+    }
+    
+    public Color getColor() {
+    	return this.color;
+    }
+    
+    public void setGender(String code){
+    	Gender gender = Gender.findGenderByCode(code);
     	this.gender = gender;
     }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public BloodType getBloodType() {
-        return bloodType;
-    }
-
-    public void setBloodType(BloodType bloodType) {
-        this.bloodType = bloodType;
-    }
-
+    
     public Gender getGender() {
-        return gender;
+    	return this.gender;
+    }
+    
+    public void setIssuerOrgan(String description) {
+    	IssuerOrgan issuerOrgan = IssuerOrgan.findIssuerOrganByDescription(description);
+    	this.issuerOrgan = issuerOrgan;
     }
 }
