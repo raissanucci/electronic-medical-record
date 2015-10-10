@@ -1,9 +1,67 @@
 package br.unicamp.mc437.grupo3.electronicmedicalrecord.steps;
 
 import br.unicamp.mc437.grupo3.electronicmedicalrecord.pages.*;
-public class ReceptionistSteps {
+import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class ReceptionistSteps {
+	List<String> fields;
+	List<String> datas;
 	CreatePage createpage;
+	
+	public ReceptionistSteps() {
+		fields = new ArrayList<String>();
+		datas = new ArrayList<String>();
+		fields.add("name");
+		fields.add("socialName");
+		fields.add("mothersName");
+		fields.add("fathersName");
+		fields.add("gender");
+		fields.add("color");
+		fields.add("birthdate");
+		fields.add("bloodtype");
+		fields.add("email");
+		fields.add("cpf");
+		fields.add("rg");
+		fields.add("orgEmissor");
+		fields.add("orgEmissorUF");
+		fields.add("ddd");
+		fields.add("phone");
+		fields.add("zip");
+		fields.add("address");
+		fields.add("addressNumber");
+		fields.add("addressComplement");
+		fields.add("addressCityArea");
+		fields.add("addressCity");
+		fields.add("addressUF");
+		fields.add("addressCountry");
+		datas.add("Jose da Silva");
+		datas.add("Raissa");
+		datas.add("Andreia Terron");
+		datas.add("Victor Accarini");
+		datas.add("male");
+		datas.add("white");
+		datas.add("04/10/1994");
+		datas.add("AB+");
+		datas.add("raissafazniver@domingo.com");
+		datas.add("27444273812");
+		datas.add("403289440");
+		datas.add("SSP");
+		datas.add("SP");
+		datas.add("11");
+		datas.add("98834556");
+		datas.add("02546000");
+		datas.add("Av Engenheiro Caetano Álvares");
+		datas.add("1789");
+		datas.add("");
+		datas.add("Limão");
+		datas.add("São Paulo");
+		datas.add("SP");
+		datas.add("Brasil");
+	}
+	
 	public void enters_page (String page) {
 		createpage.open();
 	}
@@ -11,4 +69,25 @@ public class ReceptionistSteps {
 	public void inserir_dado (String data, String field) {
 		createpage.insert(data, field);
 	}
+	
+	public void see_validation (String field) {
+		assertTrue(createpage.validate(field));
+	}
+
+	public void sees_all_fields_as_validated() {
+		for (String field: fields) {
+			assertTrue(createpage.validate(field));
+		}
+	}
+
+	public void select_finish_signup() {
+		createpage.click_signup_btn();	
+	}
+
+	public void finishes_patient() {
+		for (int i = 0; i < fields.size(); i++) {
+			createpage.insert(datas.get(i), fields.get(i));
+		}
+	}
+	
 }

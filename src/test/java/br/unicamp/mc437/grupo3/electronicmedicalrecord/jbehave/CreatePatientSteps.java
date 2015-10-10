@@ -1,7 +1,9 @@
 package br.unicamp.mc437.grupo3.electronicmedicalrecord.jbehave;
 
 import net.thucydides.core.annotations.Steps;
+
 import org.jbehave.core.annotations.*;
+
 import br.unicamp.mc437.grupo3.electronicmedicalrecord.steps.ReceptionistSteps;
 
 public class CreatePatientSteps{
@@ -29,9 +31,8 @@ public class CreatePatientSteps{
 		 //TODO 
 	}
 	@When("the receptionist Laura selects the finish option")
-	@Pending
 	public void whenTheReceptionistLauraSelectsTheFinishOption(){
-		 //TODO 
+		 laura.select_finish_signup(); 
 	}
 	@Given("the patient is already registered")
 	@Pending
@@ -49,14 +50,11 @@ public class CreatePatientSteps{
 		 //TODO 
 	}
 	@Given("the patient is not yet registered")
-	@Pending
-	public void givenThePatientIsNotYetRegistered(){
-		 //TODO 
+	public void givenThePatientIsNotYetRegistered(){ 
 	}
 	@Given("all fields are validated")
-	@Pending
 	public void givenAllFieldsAreValidated(){
-		 //TODO 
+		 laura.sees_all_fields_as_validated();
 	}
 	@Then("the system shows a message informing that the patient already exists ")
 	@Pending
@@ -64,9 +62,8 @@ public class CreatePatientSteps{
 		 //TODO 
 	}
 	@Then("the system validates the $field")
-	@Pending
 	public void thenTheSystemValidatesThefield(String field){
-		
+		laura.see_validation(field);
 	}
 	@Then("shows a success message")
 	@Pending
@@ -79,7 +76,6 @@ public class CreatePatientSteps{
 		 //TODO 
 	}
 	@When("the receptionist Laura inserts correct $data into the $field")
-	@Pending
 	public void whenTheReceptionistLauraInsertsCorrectdataIntoThefield(String data, String field){
 		 laura.inserir_dado(data, field);
 	}
@@ -94,9 +90,9 @@ public class CreatePatientSteps{
 		 //TODO 
 	}
 	@Given("the receptionist Laura wants to finish signing up the patient ")
-	@Pending
 	public void givenTheReceptionistLauraWantsToFinishSigningUpThePatient(){
-		 //TODO 
+		laura.enters_page("sign_up");
+		laura.finishes_patient();
 	}
 	@Given("the receptionist Laura is on create patient page")
 	@Pending
