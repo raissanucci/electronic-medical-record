@@ -19,8 +19,8 @@ Examples:
 |Raissa|socialName|
 |Andreia Terron|mothersName|
 |Victor Accarini|fathersName|
-|male|gender|
-|white|color|
+|M|gender|
+|Branca|color|
 |04/10/1994|birthdate|
 |AB+|bloodtype|
 |raissafazniver@domingo.com|email|

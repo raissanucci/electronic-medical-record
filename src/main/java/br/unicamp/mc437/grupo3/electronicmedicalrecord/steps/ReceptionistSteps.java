@@ -20,8 +20,8 @@ public class ReceptionistSteps {
 		registered.put("socialName", "Raissa");
 		registered.put("mothersName", "Andreia Terron");
 		registered.put("fathersName", "Victor Accarini");
-		registered.put("gender", "male");
-		registered.put("color", "white");
+		registered.put("gender", "M");
+		registered.put("color", "Branca");
 		registered.put("birthdate", "06/01/1992");
 		registered.put("bloodtype", "B+");
 		registered.put("email", "raissafazniver@sabado.com");
@@ -68,8 +68,8 @@ public class ReceptionistSteps {
 		datas.add("Raissa");
 		datas.add("Andreia Terron");
 		datas.add("Victor Accarini");
-		datas.add("male");
-		datas.add("white");
+		datas.add("M");
+		datas.add("Branca");
 		datas.add("04/10/1994");
 		datas.add("AB+");
 		datas.add("raissafazniver@domingo.com");
