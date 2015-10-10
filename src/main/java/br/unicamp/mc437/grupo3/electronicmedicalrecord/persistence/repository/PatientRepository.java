@@ -32,4 +32,11 @@ public class PatientRepository {
     public void remove(Patient patient) {
         entityManager.remove(patient);
     }
+
+    public List<Patient> queryByCPF(String cpf) {
+        final TypedQuery<Patient> query = entityManager.createQuery("SELECT p FROM Patient p WHERE p.cpf = :cpf", Patient.class);
+        query.setParameter("cpf", cpf);
+        final List<Patient> patients = query.getResultList();
+        return patients;
+    }
 }

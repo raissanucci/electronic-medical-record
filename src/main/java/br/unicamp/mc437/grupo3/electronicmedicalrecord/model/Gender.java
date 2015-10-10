@@ -29,4 +29,13 @@ public enum Gender {
 		}
 		return null;
 	}
+
+	public static Gender findGenderByCode(String code) {
+		for (Gender gender : Gender.values()) {
+			if (gender.getCode().toUpperCase().equals(code.toUpperCase())) {
+				return gender;
+			}
+		}
+		return null;
+	}
 }
