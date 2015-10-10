@@ -39,4 +39,14 @@ public enum Color {
 
         return null;
     }
+
+    public static Color findColorByIndex(int index) {
+        for(Color color : Color.values()) {
+            if(color.ordinal() == index) {
+                return color;
+            }
+        }
+
+        return null;
+    }
 }

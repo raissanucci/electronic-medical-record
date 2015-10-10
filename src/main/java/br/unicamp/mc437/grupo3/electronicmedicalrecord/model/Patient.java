@@ -25,8 +25,12 @@ public class Patient {
     
     @Enumerated(EnumType.STRING)
     private State addressUF;
+
     @Enumerated(EnumType.STRING)
     private Gender gender;
+
+    @Enumerated(EnumType.STRING)
+    private Color color;
 
     public Patient(String name) {
         this.name = name;
@@ -186,5 +190,17 @@ public class Patient {
     public void setGender(int n){
     	Gender gender = Gender.findGenderByIndex(n);
     	this.gender = gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public Color getColor() {
+        return color;
     }
 }
