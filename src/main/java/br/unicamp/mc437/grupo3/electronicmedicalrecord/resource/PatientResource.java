@@ -1,5 +1,7 @@
 package br.unicamp.mc437.grupo3.electronicmedicalrecord.resource;
 
+import br.unicamp.mc437.grupo3.electronicmedicalrecord.model.Color;
+import br.unicamp.mc437.grupo3.electronicmedicalrecord.model.Gender;
 import br.unicamp.mc437.grupo3.electronicmedicalrecord.model.Patient;
 import br.unicamp.mc437.grupo3.electronicmedicalrecord.persistence.repository.PatientRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -11,6 +13,8 @@ import javax.ejb.Singleton;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.util.Collection;
 import java.util.List;
 
 @Singleton
@@ -71,7 +75,7 @@ public class PatientResource {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public String post(@FormParam("name") String name,
+    public Response post(@FormParam("name") String name,
                        @FormParam("socialName") String socialName,
                        @FormParam("mothersName") String mothersName,
                        @FormParam("fathersName") String fathersName,
@@ -94,13 +98,18 @@ public class PatientResource {
                        @FormParam("addressCity") String addressCity,
                        @FormParam("addressUF") String addressUF,
                        @FormParam("addressCountry") String addressCountry) {
+        final List<Patient> byCPF = patientRepository.queryByCPF(cpf);
+        if (!byCPF.isEmpty()) {
+            return Response.status(400).build();
+        }
+
         Patient patient = new Patient();
         patient.setName(name);
         patient.setSocialName(socialName);
         patient.setMothersName(mothersName);
         patient.setFathersName(fathersName);
-        //patient.setGender(gender);
-        //patient.setColor(color);
+        patient.setGender(Gender.findGenderByCode(gender));
+        patient.setColor(Color.findColorByIndex(Integer.parseInt(color)));
         patient.setBirthDate(birthDate);
         //patient.setBloodType(bloodType);
         patient.setEmail(email);
@@ -120,6 +129,6 @@ public class PatientResource {
         patient.setAddressCountry(addressCountry);
 
         patientRepository.add(patient);
-        return name;
+        return Response.status(200).build();
     }
 }
