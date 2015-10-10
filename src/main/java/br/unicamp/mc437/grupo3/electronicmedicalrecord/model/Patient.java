@@ -8,42 +8,52 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-import java.util.Date;
-
 @Entity
 public class Patient {
-    @Id
+    // Patient's data
+	@Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 
     @NotNull
     private String name, cpf, rg, addressStreet, addressNumber, cep; 
 
+    // Record data
     private String socialName, mothersName, fathersName, email,
                    addressComplement, addressCityArea, addressCity,
                    addressCountry, ddd, phoneNumber, birthDate;
     
+    // Fixed value fields
     @Enumerated(EnumType.STRING)
     private State addressUF;
     @Enumerated(EnumType.STRING)
+    private BloodType bloodType;
+    @Enumerated(EnumType.STRING)
+    private Color color;
+    @Enumerated(EnumType.STRING)
     private Gender gender;
-
-    public Patient(String name) {
-        this.name = name;
-    }
+    @Enumerated(EnumType.STRING)
+    private IssuerOrgan issuerOrgan;
+    
+    // Patient's fields creators and getters
 
     public Patient() {}
 
     public Integer getId() {
         return id;
     }
-
-    public String getName() {
-        return name;
+    
+    public Patient(String name) {
+        this.name = name;
     }
+
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getCpf() {
@@ -62,6 +72,7 @@ public class Patient {
         this.rg = rg;
     }
 
+    // Record's fields creators and getters
     public String getAddressStreet() {
         return addressStreet;
     }
@@ -174,6 +185,8 @@ public class Patient {
         this.birthDate = birthDate;
     }
     
+    // Enumerated fields creators and getters
+    
     public void setAddressUF(int n) {
     	State addressUF = State.findStateByIndex(n);
     	this.addressUF = addressUF;
@@ -183,8 +196,34 @@ public class Patient {
     	return this.addressUF;
     }
     
+    public void setBloodType(int n) {
+    	BloodType bloodType = BloodType.findBloodTypeByIndex(n);
+    	this.bloodType = bloodType;
+    }
+    
+    public BloodType getBloodType() {
+    	return this.bloodType;
+    }
+    
+    public void setColor(int n) {
+    	Color color = Color.findColorByIndex(n);
+    	this.color = color;
+    }
+    
+    public Color getColor() {
+    	return this.color;
+    }
+    
     public void setGender(int n){
     	Gender gender = Gender.findGenderByIndex(n);
     	this.gender = gender;
+    }
+    
+    public Gender getGender() {
+    	return this.gender;
+    }
+    
+    public void setIssuerOrgan(int n) {
+    	
     }
 }
