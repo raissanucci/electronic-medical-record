@@ -64,8 +64,8 @@ angular.module('electronic-medical-record-api')
       return $http({
         method: type,
         url: buildUrl(resourceName, id, query),
-        data: data,
-        headers
+        data: headers ? $.param(data) : data,
+        headers: headers
       });
     };
 
