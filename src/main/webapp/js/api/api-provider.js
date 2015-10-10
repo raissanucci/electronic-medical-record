@@ -60,11 +60,12 @@ angular.module('electronic-medical-record-api')
      * @param {Object=} [data] The data to post with the request.
      * @returns {*}
      */
-    var callApi = function(type, resourceName, id, query, data) {
+    var callApi = function(type, resourceName, id, query, data, headers) {
       return $http({
         method: type,
         url: buildUrl(resourceName, id, query),
-        data: data
+        data: headers ? $.param(data) : data,
+        headers: headers
       });
     };
 
@@ -112,8 +113,8 @@ angular.module('electronic-medical-record-api')
        * @param {Object} data The object to post with the request.
        * @returns {Object} The promise object which made the request.
        */
-      post: function(resourceName, data) {
-        return callApi('POST', resourceName, null, null, data);
+      post: function(resourceName, data, headers) {
+        return callApi('POST', resourceName, null, null, data, headers);
       },
 
       /**

@@ -1,21 +1,14 @@
 package br.unicamp.mc437.grupo3.electronicmedicalrecord.resource;
 
-import br.unicamp.mc437.grupo3.electronicmedicalrecord.model.BloodType;
-import br.unicamp.mc437.grupo3.electronicmedicalrecord.model.Color;
-import br.unicamp.mc437.grupo3.electronicmedicalrecord.model.Gender;
 import br.unicamp.mc437.grupo3.electronicmedicalrecord.model.Patient;
 import br.unicamp.mc437.grupo3.electronicmedicalrecord.persistence.repository.PatientRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.JsonObject;
 
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
-import javax.inject.Inject;
 import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.Collection;
 import java.util.List;
 
 @Singleton
@@ -74,8 +67,6 @@ public class PatientResource {
 
 
     @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     public Response post(@FormParam("name") String name,
                        @FormParam("socialName") String socialName,
                        @FormParam("mothersName") String mothersName,

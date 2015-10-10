@@ -4,14 +4,41 @@ import br.unicamp.mc437.grupo3.electronicmedicalrecord.pages.*;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
 
 public class ReceptionistSteps {
 	List<String> fields;
 	List<String> datas;
+	Map<String, String> registered;
 	CreatePage createpage;
-	
+
 	public ReceptionistSteps() {
+		registered = new HashMap<String, String>();
+		registered.put("name", "Jose de Souza");
+		registered.put("socialName", "Raissa");
+		registered.put("mothersName", "Andreia Terron");
+		registered.put("fathersName", "Victor Accarini");
+		registered.put("gender", "male");
+		registered.put("color", "white");
+		registered.put("birthdate", "06/01/1992");
+		registered.put("bloodtype", "B+");
+		registered.put("email", "raissafazniver@sabado.com");
+		registered.put("cpf", "27444273812");
+		registered.put("rg", "403289440");
+		registered.put("orgEmissor", "SSP");
+		registered.put("orgEmissorUF", "SP");
+		registered.put("ddd", "11");
+		registered.put("phone", "98834556");
+		registered.put("zip", "02546000");
+		registered.put("address", "Av Engenheiro Caetano Álvares");
+		registered.put("addressNumber", "1789");
+		registered.put("addressComplement", "");
+		registered.put("addressCityArea", "Limão");
+		registered.put("addressCity", "São Paulo");
+		registered.put("addressUF", "SP");
+		registered.put("addressCountry", "Brasil");
 		fields = new ArrayList<String>();
 		datas = new ArrayList<String>();
 		fields.add("name");
@@ -61,17 +88,21 @@ public class ReceptionistSteps {
 		datas.add("SP");
 		datas.add("Brasil");
 	}
-	
+
 	public void enters_page (String page) {
 		createpage.open();
 	}
-	
+
 	public void inserir_dado (String data, String field) {
 		createpage.insert(data, field);
 	}
-	
+
 	public void see_validation (String field) {
 		assertTrue(createpage.validate(field));
+	}
+
+	public void user_already_registered() {
+		assertTrue(true);
 	}
 
 	public void sees_all_fields_as_validated() {
@@ -80,8 +111,12 @@ public class ReceptionistSteps {
 		}
 	}
 
+	public void insert_registered_patient_data() {
+		createpage.insert("", "");
+	}
+
 	public void select_finish_signup() {
-		createpage.click_signup_btn();	
+		createpage.click_signup_btn();
 	}
 
 	public void finishes_patient() {
@@ -89,5 +124,5 @@ public class ReceptionistSteps {
 			createpage.insert(datas.get(i), fields.get(i));
 		}
 	}
-	
+
 }

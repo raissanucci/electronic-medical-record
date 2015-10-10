@@ -237,6 +237,6 @@ public class Patient {
     }
 
     public State getIssuerOrganUF() {
-        return this.getIssuerOrganUF();
+        return this.issuerOrganUF;
     }
 }
