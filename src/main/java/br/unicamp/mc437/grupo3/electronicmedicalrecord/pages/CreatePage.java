@@ -23,31 +23,15 @@ public class CreatePage extends PageObject {
 		WebElementFacade input = find(By.name(field));
 		input.type(data);
 	}
-    /*@FindBy(name="search")
-    private WebElementFacade searchTerms;
+	
+	public boolean validate (String field) {
+		WebElementFacade val = find(By.name(field));
+		return (val.getAttribute("class") == "input_ok");
+		
+	}
 
-    @FindBy(name="go")
-    private WebElementFacade lookupButton;
-    */
-    /*public void enter_keywords(String keyword) {
-        searchTerms.type(keyword);
-    }
-
-    public void lookup_terms() {
-        lookupButton.click();
-    }
-
-    public List<String> getDefinitions() {
-        WebElementFacade definitionList = find(By.tagName("ol"));
-        List<WebElement> results = definitionList.findElements(By.tagName("li"));
-        return convert(results, toStrings());
-    }
-
-    private Converter<WebElement, String> toStrings() {
-        return new Converter<WebElement, String>() {
-            public String convert(WebElement from) {
-                return from.getText();
-            }
-        };
-    }*/
+	public void click_signup_btn() {
+		WebElementFacade signup = find(By.name("signupbtn"));
+		signup.click();
+	}
 }
