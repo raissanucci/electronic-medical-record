@@ -1,3 +1,3 @@
-ngapp.controller('patientListController', [function($scope) {
-    
+ngapp.controller('PatientListController', [function($scope) {
+
 }])

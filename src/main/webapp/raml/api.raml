@@ -30,6 +30,8 @@ traits:
         displayName: NewPatient
         description: Creates a new patient
         body:
+            application/x-www-form-urlencoded:
+                schema: Patient
             application/json:
                 schema: Patient
     /{id}:
