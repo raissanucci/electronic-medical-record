@@ -34,6 +34,9 @@ public class Patient {
     private Gender gender;
     @Enumerated(EnumType.STRING)
     private IssuerOrgan issuerOrgan;
+
+    @Enumerated(EnumType.STRING)
+    private State issuerOrganUF;
     
     // Patient's fields creators and getters
 
@@ -226,5 +229,14 @@ public class Patient {
     public void setIssuerOrgan(String description) {
     	IssuerOrgan issuerOrgan = IssuerOrgan.findIssuerOrganByDescription(description);
     	this.issuerOrgan = issuerOrgan;
+    }
+
+    public void setIssuerOrganUF(String IssuerOrganUF) {
+        State state = State.findStateByAcronym(IssuerOrganUF);
+        this.issuerOrganUF = state;
+    }
+
+    public State getIssuerOrganUF() {
+        return this.getIssuerOrganUF();
     }
 }
