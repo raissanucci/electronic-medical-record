@@ -148,5 +148,5 @@ angular.module('electronic-medical-record-api')
  * Sets up the api base url.
  */
 .config(['ApiProvider', function(ApiProvider) {
-  ApiProvider.setApiBaseUrl('http://example.api.com/v1');
+  ApiProvider.setApiBaseUrl('http://localhost:8080/electronic-medical-record-1.0.0/api');
 }]);
