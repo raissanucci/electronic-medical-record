@@ -1,8 +1,6 @@
 package br.unicamp.mc437.grupo3.electronicmedicalrecord.model;
 
 
-import java.lang.reflect.Array;
-
 /**
  * Created by raissanucci on 10/9/15.
  */
@@ -30,9 +28,9 @@ public enum Color {
         return description;
     }
 
-    public static Color findColorByIndex(int index) {
-        for(Color color : Color.values()) {
-            if(color.ordinal() == index) {
+    public static Color findColorByDescription(String description) {
+        for (Color color : Color.values()) {
+            if (description.toLowerCase().equals(color.getDescription().toLowerCase())) {
                 return color;
             }
         }

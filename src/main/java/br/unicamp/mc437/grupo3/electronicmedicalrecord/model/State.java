@@ -46,9 +46,9 @@ public enum State {
 		return name;
 	}
 	
-	public static State findStateByIndex(int n) {
+	public static State findStateByAcronym(String acronym) {
 		for (State state : State.values()) {
-			if (state.ordinal() == n) {
+			if (state.getAcronym().toLowerCase().equals(acronym.toLowerCase())) {
 				return state;
 			}
 		}

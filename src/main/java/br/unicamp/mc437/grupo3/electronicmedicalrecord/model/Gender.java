@@ -21,9 +21,9 @@ public enum Gender {
 		return gender;
 	}
 	
-	public static Gender findGenderByIndex(int n) {
+	public static Gender findGenderByCode(String code) {
 		for (Gender gender : Gender.values()) {
-			if (gender.ordinal() == n) {
+			if (gender.getCode().toLowerCase().equals(code.toLowerCase())) {
 				return gender;
 			}
 		}

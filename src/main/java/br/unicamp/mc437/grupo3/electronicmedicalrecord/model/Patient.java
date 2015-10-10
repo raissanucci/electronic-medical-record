@@ -187,8 +187,8 @@ public class Patient {
     
     // Enumerated fields creators and getters
     
-    public void setAddressUF(int n) {
-    	State addressUF = State.findStateByIndex(n);
+    public void setAddressUF(String acronym) {
+    	State addressUF = State.findStateByAcronym(acronym);
     	this.addressUF = addressUF;
     }
     
@@ -196,8 +196,8 @@ public class Patient {
     	return this.addressUF;
     }
     
-    public void setBloodType(int n) {
-    	BloodType bloodType = BloodType.findBloodTypeByIndex(n);
+    public void setBloodType(String description) {
+    	BloodType bloodType = BloodType.findBloodTypeByDescription(description);
     	this.bloodType = bloodType;
     }
     
@@ -205,8 +205,8 @@ public class Patient {
     	return this.bloodType;
     }
     
-    public void setColor(int n) {
-    	Color color = Color.findColorByIndex(n);
+    public void setColor(String description) {
+    	Color color = Color.findColorByDescription(description);
     	this.color = color;
     }
     
@@ -214,8 +214,8 @@ public class Patient {
     	return this.color;
     }
     
-    public void setGender(int n){
-    	Gender gender = Gender.findGenderByIndex(n);
+    public void setGender(String code){
+    	Gender gender = Gender.findGenderByCode(code);
     	this.gender = gender;
     }
     
@@ -223,7 +223,8 @@ public class Patient {
     	return this.gender;
     }
     
-    public void setIssuerOrgan(int n) {
-    	
+    public void setIssuerOrgan(String description) {
+    	IssuerOrgan issuerOrgan = IssuerOrgan.findIssuerOrganByDescription(description);
+    	this.issuerOrgan = issuerOrgan;
     }
 }

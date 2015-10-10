@@ -22,9 +22,9 @@ public enum BloodType {
         return description;
     }
 
-    public static BloodType findBloodTypeByIndex(int index) {
+    public static BloodType findBloodTypeByDescription(String description) {
         for(BloodType bloodType : BloodType.values()) {
-            if(bloodType.ordinal() == index) {
+            if(bloodType.getDescrition().toLowerCase().equals(description.toLowerCase())) {
                 return bloodType;
             }
         }
