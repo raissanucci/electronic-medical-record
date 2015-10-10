@@ -74,8 +74,6 @@ public class PatientResource {
 
 
     @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     public Response post(@FormParam("name") String name,
                        @FormParam("socialName") String socialName,
                        @FormParam("mothersName") String mothersName,
