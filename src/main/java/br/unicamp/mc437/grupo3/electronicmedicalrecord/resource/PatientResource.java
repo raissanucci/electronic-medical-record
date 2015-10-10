@@ -10,7 +10,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Singleton
-@Path("/patient")
+@Path("/patients")
 public class PatientResource {
     @EJB
     private PatientRepository patientRepository;

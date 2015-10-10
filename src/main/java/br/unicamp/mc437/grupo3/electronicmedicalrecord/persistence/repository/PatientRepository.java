@@ -6,6 +6,8 @@ import javax.ejb.Singleton;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import java.util.List;
 
 @Singleton
 public class PatientRepository {
@@ -19,5 +21,15 @@ public class PatientRepository {
     public Patient get(Integer patientId) {
         Patient patient = entityManager.find(Patient.class, patientId);
         return patient;
+    }
+
+    public List<Patient> all() {
+        TypedQuery<Patient> query = entityManager.createQuery("SELECT p FROM Patient p", Patient.class);
+        List<Patient> patients = query.getResultList();
+        return patients;
+    }
+
+    public void remove(Patient patient) {
+        entityManager.remove(patient);
     }
 }
