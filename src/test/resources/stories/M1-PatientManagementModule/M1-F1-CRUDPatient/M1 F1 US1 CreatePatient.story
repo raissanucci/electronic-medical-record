@@ -19,7 +19,7 @@ Examples:
 |Raissa|socialName|
 |Andreia Terron|mothersName|
 |Victor Accarini|fathersName|
-|Avenida das Flores|gender|
+|male|gender|
 |white|color|
 |04/10/1994|birthdate|
 |AB+|bloodtype|
