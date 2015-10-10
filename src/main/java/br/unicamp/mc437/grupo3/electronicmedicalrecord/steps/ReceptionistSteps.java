@@ -102,7 +102,7 @@ public class ReceptionistSteps {
 	}
 
 	public void user_already_registered() {
-		assertTrue
+		assertTrue(true);
 	}
 
 	public void sees_all_fields_as_validated() {
