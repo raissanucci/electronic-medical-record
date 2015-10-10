@@ -1,5 +1,6 @@
 package br.unicamp.mc437.grupo3.electronicmedicalrecord.resource;
 
+import br.unicamp.mc437.grupo3.electronicmedicalrecord.model.BloodType;
 import br.unicamp.mc437.grupo3.electronicmedicalrecord.model.Color;
 import br.unicamp.mc437.grupo3.electronicmedicalrecord.model.Gender;
 import br.unicamp.mc437.grupo3.electronicmedicalrecord.model.Patient;
@@ -109,13 +110,13 @@ public class PatientResource {
         patient.setMothersName(mothersName);
         patient.setFathersName(fathersName);
         patient.setGender(Gender.findGenderByCode(gender));
-        patient.setColor(Color.findColorByIndex(Integer.parseInt(color)));
+        patient.setColor(Color.findColorByDescription(color));
         patient.setBirthDate(birthDate);
-        //patient.setBloodType(bloodType);
+        patient.setBloodType(BloodType.findBloodTypeByDescription(bloodType));
         patient.setEmail(email);
         patient.setCpf(cpf);
         patient.setRg(rg);
-        //patient.setIssuerOrgan(orgEmissor);
+        patient.setIssuerOrgan(orgEmissor);
         //patient.setIssuerOrganUF(orgEmissorUF);
         patient.setDdd(ddd);
         patient.setPhoneNumber(phone);

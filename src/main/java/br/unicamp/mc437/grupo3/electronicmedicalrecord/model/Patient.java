@@ -32,6 +32,12 @@ public class Patient {
     @Enumerated(EnumType.STRING)
     private Color color;
 
+    @Enumerated(EnumType.STRING)
+    private BloodType bloodType;
+
+    @Enumerated(EnumType.STRING)
+    private IssuerOrgan issuerOrgan;
+
     public Patient(String name) {
         this.name = name;
     }
@@ -202,5 +208,17 @@ public class Patient {
 
     public Color getColor() {
         return color;
+    }
+
+    public BloodType getBloodType() {
+        return bloodType;
+    }
+
+    public void setBloodType(BloodType bloodType) {
+        this.bloodType = bloodType;
+    }
+
+    public Gender getGender() {
+        return gender;
     }
 }
