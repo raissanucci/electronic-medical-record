@@ -1,10 +1,13 @@
 package br.unicamp.mc437.grupo3.electronicmedicalrecord.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+
 import java.util.Date;
 
 @Entity
@@ -19,6 +22,11 @@ public class Patient {
     private String socialName, mothersName, fathersName, email,
                    addressComplement, addressCityArea, addressCity,
                    addressCountry, ddd, phoneNumber, birthDate;
+    
+    @Enumerated(EnumType.STRING)
+    private State addressUF;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 
     public Patient(String name) {
         this.name = name;
@@ -164,5 +172,19 @@ public class Patient {
 
     public void setBirthDate(String birthDate){
         this.birthDate = birthDate;
+    }
+    
+    public void setAddressUF(int n) {
+    	State addressUF = State.findStateByIndex(n);
+    	this.addressUF = addressUF;
+    }
+    
+    public State getAddressUF(){
+    	return this.addressUF;
+    }
+    
+    public void setGender(int n){
+    	Gender gender = Gender.findGenderByIndex(n);
+    	this.gender = gender;
     }
 }
