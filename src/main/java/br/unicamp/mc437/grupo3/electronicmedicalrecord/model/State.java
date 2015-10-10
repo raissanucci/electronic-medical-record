@@ -54,13 +54,4 @@ public enum State {
 		}
 		return null;
 	}
-
-	public static State findStateByAcronym(String acronym) {
-        for (State state : State.values()) {
-            if (state.getAcronym().toUpperCase().equals(acronym.toUpperCase())) {
-                return state;
-            }
-        }
-        return null;
-    }
 }

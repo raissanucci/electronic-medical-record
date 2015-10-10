@@ -54,7 +54,7 @@ public enum IssuerOrgan {
 
     public static IssuerOrgan findIssuerOrganByDescription(String description) {
         for(IssuerOrgan issuerOrgan : IssuerOrgan.values()) {
-            if(issuerOrgan.description.toLowerCase().equals(description.toLowerCase())) {
+            if(description.toLowerCase().equals(issuerOrgan.description.toLowerCase())) {
                 return issuerOrgan;
             }
         }

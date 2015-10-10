@@ -31,18 +31,8 @@ public enum Color {
     }
 
     public static Color findColorByDescription(String description) {
-        for(Color color : Color.values()) {
-            if(description.toLowerCase().equals(color.getDescription().toLowerCase())) {
-                return color;
-            }
-        }
-
-        return null;
-    }
-
-    public static Color findColorByIndex(int index) {
-        for(Color color : Color.values()) {
-            if(color.ordinal() == index) {
+        for (Color color : Color.values()) {
+            if (description.toLowerCase().equals(color.getDescription().toLowerCase())) {
                 return color;
             }
         }
