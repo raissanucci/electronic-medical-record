@@ -65,7 +65,7 @@ public class CreatePatientSteps{
 	@Given("the receptionist Laura wants to insert someone")
 	@Pending
 	public void givenTheReceptionistLauraWantsToInsertSomeone(){
-		//TODO
+		laura.enters_page("sign_up");
 	}
 
 	@Given("the patient is already registered")
@@ -76,7 +76,7 @@ public class CreatePatientSteps{
 	@When("the receptionist Laura selects the  create option")
 	@Pending
 	public void whenTheReceptionistLauraSelectsTheCreateOption(){
-		//TODO
+		laura.select_finish_signup();
 	}
 
 	@Then("the system shows a message informing that the patient already exists ")
@@ -118,7 +118,7 @@ public class CreatePatientSteps{
 	@Given("the receptionist Laura is on create patient page")
 	@Pending
 	public void givenTheReceptionistLauraIsOnCreatePatientPage(){
-		//TODO
+		laura.enters_page("sign_up");
 	}
 
 	@When("the receptionist Laura select insert health insurance and select a health insurance")
