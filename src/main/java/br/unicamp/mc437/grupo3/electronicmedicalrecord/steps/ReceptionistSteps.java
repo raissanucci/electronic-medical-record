@@ -125,4 +125,17 @@ public class ReceptionistSteps {
 		}
 	}
 
+	public void sees_success_msg() {
+		assertTrue(createpage.has_success_msg());
+	}
+
+	public void checks_database_for_insertion() {
+		assertTrue(createpage.insert_database());
+	}
+
+	public void checks_the_patient_is_registered() {
+		//TODO: Everything!!!
+		assertTrue(false);
+	}
+	
 }
