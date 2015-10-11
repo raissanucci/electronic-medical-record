@@ -1,5 +1,6 @@
 package br.unicamp.mc437.grupo3.electronicmedicalrecord.pages;
 
+import br.unicamp.mc437.grupo3.electronicmedicalrecord.fakeObjects.APIFakeObject;
 import ch.lambdaj.function.convert.Converter;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
@@ -12,12 +13,14 @@ import net.thucydides.core.annotations.findby.FindBy;
 
 import net.thucydides.core.pages.PageObject;
 
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 import static ch.lambdaj.Lambda.convert;
 
 @DefaultUrl("http://localhost:8080/electronic-medical-record-1.0.0/#/patients/create")
 public class CreatePage extends PageObject {
+	APIFakeObject fakeObject;
 
 	public void insert (String data, String field) {
 		WebElementFacade input = find(By.name(field));
@@ -27,7 +30,6 @@ public class CreatePage extends PageObject {
 	public boolean validate (String field) {
 		WebElementFacade val = find(By.name(field));
 		return (val.getAttribute("class") == "input_ok");
-		
 	}
 
 	public void click_signup_btn() {
@@ -40,8 +42,19 @@ public class CreatePage extends PageObject {
 		return msg.isCurrentlyVisible();
 	}
 
-	public boolean insert_database() {
-		//TODO: fake object
+	public boolean insert_correctly_into_database() {
+		Response response = fakeObject.insert_correctly_on_DB();
+		if (response.getStatus() == 200) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean insert_badly_into_database() {
+		Response response = fakeObject.insert_badly_on_DB();
+		if (response.getStatus() == 400) {
+			return true;
+		}
 		return false;
 	}
 }

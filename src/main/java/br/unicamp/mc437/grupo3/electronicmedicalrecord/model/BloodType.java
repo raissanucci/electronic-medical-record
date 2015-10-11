@@ -18,13 +18,13 @@ public enum BloodType {
         this.description = description;
     }
 
-    public String getDescrition() {
+    public String getDescription() {
         return description;
     }
 
     public static BloodType findBloodTypeByDescription(String description) {
         for(BloodType bloodType : BloodType.values()) {
-            if(bloodType.getDescrition().toLowerCase().equals(description.toLowerCase())) {
+            if(bloodType.getDescription().toLowerCase().equals(description.toLowerCase())) {
                 return bloodType;
             }
         }

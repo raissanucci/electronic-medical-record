@@ -129,8 +129,12 @@ public class ReceptionistSteps {
 		assertTrue(createpage.has_success_msg());
 	}
 
-	public void checks_database_for_insertion() {
-		assertTrue(createpage.insert_database());
+	public void checks_database_for_correct_insertion() {
+		assertTrue(createpage.insert_correctly_into_database());
+	}
+
+	public void checks_database_for_bad_insertion() {
+		assertTrue(createpage.insert_badly_into_database());
 	}
 
 	public void checks_the_patient_is_registered() {

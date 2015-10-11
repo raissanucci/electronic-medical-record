@@ -1,6 +1,9 @@
 package br.unicamp.mc437.grupo3.electronicmedicalrecord.resource;
 
+import br.unicamp.mc437.grupo3.electronicmedicalrecord.model.AuditoryEvent;
+import br.unicamp.mc437.grupo3.electronicmedicalrecord.model.AuditoryTrail;
 import br.unicamp.mc437.grupo3.electronicmedicalrecord.model.Patient;
+import br.unicamp.mc437.grupo3.electronicmedicalrecord.persistence.repository.AuditoryTrailRepository;
 import br.unicamp.mc437.grupo3.electronicmedicalrecord.persistence.repository.PatientRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,6 +12,8 @@ import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+import java.util.Date;
+import java.util.EventListener;
 import java.util.List;
 
 @Singleton
@@ -121,6 +126,12 @@ public class PatientResource {
         patient.setAddressCountry(addressCountry);
 
         patientRepository.add(patient);
+
+        AuditoryTrailRepository auditoryTrailRepository = new AuditoryTrailRepository();
+        AuditoryTrail auditoryTrail = new AuditoryTrail(AuditoryEvent.CREATE_PATIENT, new Date());
+
+        auditoryTrailRepository.addAuditoryTrail(auditoryTrail);
+        
         return Response.status(200).build();
     }
 }

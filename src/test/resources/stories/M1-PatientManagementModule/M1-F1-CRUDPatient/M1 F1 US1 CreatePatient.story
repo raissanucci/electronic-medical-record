@@ -44,7 +44,7 @@ Given the receptionist Laura wants to finish signing up the patient
 And the patient is not yet registered
 And all fields are validated
 When the receptionist Laura selects the finish option
-Then the system creates the patient in the database 
+Then the system creates the patient in the database
 And shows a success message
 
 Scenario: Finishing signing up a patient that does exist
@@ -58,7 +58,7 @@ Scenario: Choosing to create patient that already exists
 Given the receptionist Laura wants to create a patient that already exists in the system
 And the warning message has been shown
 When the receptionist Laura selects the  create option
-Then the system creates a new patient in the database
+Then the system creates the patient in the database
 And shows a success message
 
 Scenario: Inserting patient health insurance

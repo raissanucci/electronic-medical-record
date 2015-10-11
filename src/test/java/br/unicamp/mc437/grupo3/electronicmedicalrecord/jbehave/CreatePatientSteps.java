@@ -30,10 +30,15 @@ public class CreatePatientSteps{
 	}
 
 	// Scenario 2
-	@Given("the receptionist Laura wants to finish signing up the patient ")
+	@Given("the receptionist Laura wants to finish signing up the patient")
 	public void givenTheReceptionistLauraWantsToFinishSigningUpThePatient(){
 		laura.enters_page("sign_up");
 		laura.finishes_patient();
+	}
+
+	@Given("the patient is not yet registered")
+	public void givenThePatientIsNotYetRegistered(){
+		laura.checks_the_patient_is_registered();
 	}
 
 	@Given("all fields are validated")
@@ -46,10 +51,15 @@ public class CreatePatientSteps{
 		laura.select_finish_signup();
 	}
 
-	@Then("the system creates a new patient in the database")
+	@Then("the system creates the patient in the database")
 	@Pending
 	public void thenTheSystemCreatesANewPatientInTheDatabase(){
-		//TODO
+		laura.checks_database_for_correct_insertion();
+	}
+
+	@Then("shows a success message")
+	public void thenShowsASuccessMessage(){
+		laura.sees_success_msg();
 	}
 
 	// Scenario 3
@@ -59,27 +69,17 @@ public class CreatePatientSteps{
 	public void givenTheReceptionistLauraWantsToInsertSomeone(){
 		laura.enters_page("sign_up");
 	}
-	
-	@Given("the patient is not yet registered")
-	public void givenThePatientIsNotYetRegistered(){
-		laura.checks_the_patient_is_registered();
-	}
 
-	@When("the receptionist Laura selects the  create option")
+	@Given("the patient is already registered")
 	@Pending
-	public void whenTheReceptionistLauraSelectsTheCreateOption(){
-		laura.select_finish_signup();
+	public void givenThePatientIsAlreadyRegistered() {
+		laura.checks_database_for_bad_insertion();
 	}
 
-	@Then("the system shows a message informing that the patient already exists ")
+	@Then("the system shows a message informing that the patient already exists")
 	@Pending
 	public void thenTheSystemShowsAMessageInformingThatThePatientAlreadyExists(){
 		//TODO
-	}
-
-	@Then("shows a success message")
-	public void thenShowsASuccessMessage(){
-		 laura.sees_success_msg();
 	}
 
 	@Then("gives the option to create the register or not")
@@ -102,6 +102,17 @@ public class CreatePatientSteps{
 		//TODO
 	}
 
+	@When("the receptionist Laura selects the  create option")
+	@Pending
+	public void whenTheReceptionistLauraSelectsTheCreateOption(){
+		// TODO
+	}
+
+	@Then("the system creates the patient in the database ")
+	public void thenTheSystemCreatesThePatientInTheDatabase(){
+		laura.checks_database_for_correct_insertion();
+	}
+
 	// Scenario 5
 
 	@Given("the receptionist Laura is on create patient page")
@@ -115,12 +126,6 @@ public class CreatePatientSteps{
 	public void whenTheReceptionistLauraSelectInsertHealthInsuranceAndSelectAHealthInsurance(){
 		 //TODO
 	}
-	
-	@Then("the system creates the patient in the database ")
-	public void thenTheSystemCreatesThePatientInTheDatabase(){
-		 laura.checks_database_for_insertion();
-	}
-
 
 	@Then("the system insert the health insurance into the patient demographic record")
 	@Pending
