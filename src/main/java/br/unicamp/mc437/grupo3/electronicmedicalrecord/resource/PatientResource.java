@@ -131,7 +131,7 @@ public class PatientResource {
         AuditoryTrail auditoryTrail = new AuditoryTrail(AuditoryEvent.CREATE_PATIENT, new Date());
 
         auditoryTrailRepository.addAuditoryTrail(auditoryTrail);
-        
+
         return Response.status(200).build();
     }
 }

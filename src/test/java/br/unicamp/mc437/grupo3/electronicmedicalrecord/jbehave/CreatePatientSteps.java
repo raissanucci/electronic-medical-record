@@ -38,7 +38,7 @@ public class CreatePatientSteps{
 
 	@Given("the patient is not yet registered")
 	public void givenThePatientIsNotYetRegistered(){
-		laura.checks_the_patient_is_registered();
+		laura.checks_the_patient_is_not_registered();
 	}
 
 	@Given("all fields are validated")
@@ -73,7 +73,7 @@ public class CreatePatientSteps{
 	@Given("the patient is already registered")
 	@Pending
 	public void givenThePatientIsAlreadyRegistered() {
-		laura.checks_database_for_bad_insertion();
+		laura.checks_the_patient_is_registered();
 	}
 
 	@Then("the system shows a message informing that the patient already exists")

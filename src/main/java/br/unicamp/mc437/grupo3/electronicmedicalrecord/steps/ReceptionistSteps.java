@@ -1,5 +1,6 @@
 package br.unicamp.mc437.grupo3.electronicmedicalrecord.steps;
 
+import br.unicamp.mc437.grupo3.electronicmedicalrecord.fakeObjects.APIFakeObject;
 import br.unicamp.mc437.grupo3.electronicmedicalrecord.pages.*;
 import static org.junit.Assert.*;
 
@@ -13,6 +14,7 @@ public class ReceptionistSteps {
 	List<String> datas;
 	Map<String, String> registered;
 	CreatePage createpage;
+	APIFakeObject fakeObject;
 
 	public ReceptionistSteps() {
 		registered = new HashMap<String, String>();
@@ -138,8 +140,10 @@ public class ReceptionistSteps {
 	}
 
 	public void checks_the_patient_is_registered() {
-		//TODO: Everything!!!
-		assertTrue(false);
+		assertTrue(fakeObject.check_patient_is_registered(datas.get(9)));
 	}
-	
+
+	public void checks_the_patient_is_not_registered() {
+		assertTrue(!fakeObject.check_patient_is_registered(datas.get(9)));
+	}
 }
